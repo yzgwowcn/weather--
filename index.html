@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的私人天气站</title>
+    <title>天气查询</title>
     
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
@@ -102,8 +102,8 @@
             const { map } = windyAPI;
             windyMap = map;
             
-            // 这里可以设置默认图层，比如 'wind' (风), 'rain' (雨), 'temp' (温度)
-            // windyAPI.store.set('overlay', 'wind'); 
+            // 设置默认图层， 'wind' (风), 'rain' (雨), 'temp' (温度)
+            // windyAPI.store.set('overlay', 'rain'); 
         });
 
         // 搜索处理函数
@@ -115,7 +115,7 @@
 
             // 显示加载提示
             statusDiv.style.display = 'block';
-            statusDiv.innerText = '正在飞往 ' + query + '...';
+            statusDiv.innerText = '正在前往 ' + query + '...';
 
             try {
                 // 调用 OpenStreetMap 的 Nominatim 接口进行地理编码
@@ -159,3 +159,4 @@
 </body>
 
 </html>
+
